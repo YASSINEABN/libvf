@@ -18,7 +18,7 @@ NAME = libft.a
 all: ${NAME}
 
 ${NAME} : ${OBJS}
-	ar rcs ${NAME} ${OBJS}
+	ar rc ${NAME} ${OBJS}
 
 ${BOBJS}:${BONUS}
 	${CC} ${CFLAGS} -c ${BONUS}
