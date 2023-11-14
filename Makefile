@@ -20,9 +20,11 @@ all: ${NAME}
 ${NAME} : ${OBJS}
 	ar rcs ${NAME} ${OBJS}
 
+${BOBJS}:${BONUS}
+	${CC} ${CFLAGS} -c ${BONUS}
+	ar rc ${NAME} ${BOBJS}
 bonus : ${BOBJS}
-	ar rcs ${NAME} ${BOBJS}
-        
+
 clean:
 	rm -f ${OBJS} ${BOBJS}
 
@@ -30,3 +32,5 @@ fclean: clean
 	rm -f ${NAME}
 
 re : fclean all
+
+.PHONY : re fclean clean bonus all
